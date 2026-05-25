@@ -1,0 +1,37 @@
+---
+const stories = [
+  {
+    name: "Access Training Sheffield",
+    body: "Recently completed my Level 2 plumbing course. The instructors are top-notch and the kit is brand new. I'd recommend Access Training to anyone.",
+    role: "Student",
+    rating: 5,
+  },
+  {
+    name: "Great service felt very supported",
+    body: "I just finished my practical assessment. From the start the support I received has been amazing. I felt comfortable and confident throughout.",
+    role: "Recent graduate",
+    rating: 5,
+  },
+  {
+    name: "I'm doing domestic gas training",
+    body: "Currently halfway through my gas course. Tutors are knowledgeable and patient. Workshop facilities are second to none.",
+    role: "Current student",
+    rating: 5,
+  },
+];
+---
+
+<section class="bg-brand-cream pb-16">
+  <div class="container-page grid gap-5 md:grid-cols-3">
+    {stories.map((s) => (
+      <article class="bg-neutral-0 rounded-2xl p-6 space-y-3">
+        <div class="text-brand-warning text-sm">
+          {"★".repeat(s.rating)}
+        </div>
+        <h3 class="font-semibold text-brand-primary">{s.name}</h3>
+        <p class="text-sm text-neutral-600">{s.body}</p>
+        <div class="text-xs text-neutral-400 pt-2">{s.role}</div>
+      </article>
+    ))}
+  </div>
+</section>

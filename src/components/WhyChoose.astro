@@ -1,0 +1,57 @@
+---
+const pillars = [
+  { label: "Flexibility", icon: "⚡" },
+  { label: "Accredited", icon: "✓" },
+  { label: "Funding", icon: "£" },
+];
+
+const stats = [
+  { value: "23 Years", label: "Since 2002 in training" },
+  { value: "35,000", label: "Courses delivered" },
+  { value: "100,000", label: "Students trained" },
+  { value: "40+", label: "Locations near you" },
+];
+---
+
+<section class="bg-brand-primary text-neutral-0 section-pad">
+  <div class="container-page grid gap-12 md:grid-cols-[1.1fr_1fr] items-start">
+    <div class="space-y-6">
+      <h2 class="display text-5xl md:text-6xl">
+        Why choose
+        <br />
+        <span class="text-brand-accent">Access Training</span>
+      </h2>
+      <p class="text-neutral-200 max-w-md">
+        Training across the UK helps people from all backgrounds get qualified
+        and into a trade they love. Electrical, plumbing, and gas — we've got
+        the experience and partners to back you.
+      </p>
+      <a
+        href="/why"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-accent text-brand-primary text-sm font-medium hover:bg-brand-accent-strong transition-colors"
+      >
+        Enquire Now
+      </a>
+    </div>
+
+    <ul class="space-y-3">
+      {pillars.map((p) => (
+        <li class="rounded-2xl bg-brand-accent text-brand-primary px-6 py-4 flex items-center justify-between">
+          <span class="font-semibold">{p.label}</span>
+          <span aria-hidden class="text-xl">{p.icon}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="container-page mt-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-3xl bg-brand-primary-700">
+      {stats.map((s) => (
+        <div class="text-center space-y-1">
+          <div class="display text-4xl text-brand-accent">{s.value}</div>
+          <div class="text-xs text-neutral-400">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

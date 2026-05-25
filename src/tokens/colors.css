@@ -1,0 +1,38 @@
+/*
+ * Brand color tokens — Access Training
+ * Single source of truth. Tailwind utilities are mapped from these in global.css.
+ */
+:root {
+  /* brand */
+  --brand-primary: #0d2823;       /* deep teal — dark surfaces */
+  --brand-primary-700: #143a32;
+  --brand-primary-500: #1c4a40;
+  --brand-accent: #22e0c0;        /* turquoise — primary accent */
+  --brand-accent-strong: #00bf9b;
+  --brand-warning: #ffb547;       /* orange — secondary accent */
+  --brand-cream: #f5efe2;         /* light section background */
+
+  /* neutrals */
+  --neutral-0: #ffffff;
+  --neutral-50: #f7f6f3;
+  --neutral-100: #ececec;
+  --neutral-200: #d6d6d6;
+  --neutral-400: #949494;
+  --neutral-600: #555555;
+  --neutral-800: #1f1f1f;
+  --neutral-900: #0a0a0a;
+
+  /* semantic backgrounds */
+  --bg-page: var(--neutral-0);
+  --bg-surface: var(--brand-cream);
+  --bg-dark: var(--brand-primary);
+
+  /* semantic text */
+  --text-default: var(--neutral-900);
+  --text-muted: var(--neutral-600);
+  --text-on-dark: var(--neutral-0);
+
+  /* button */
+  --bg-button-accent-always: var(--brand-accent);
+  --text-button-accent-always: var(--neutral-900);
+}

@@ -1,0 +1,65 @@
+---
+const steps = [
+  {
+    n: "01",
+    title: "Live online theory",
+    desc: "Study from home, in your own time, with live tutor support.",
+  },
+  {
+    n: "02",
+    title: "Practical training",
+    desc: "Hands-on workshops at our centres across the UK.",
+  },
+  {
+    n: "03",
+    title: "Career & Recruitment",
+    desc: "Real jobs from our recruitment partners on completion.",
+  },
+];
+---
+
+<section class="bg-brand-cream section-pad">
+  <div class="container-page grid gap-12 md:grid-cols-[1fr_1.2fr] items-center">
+    <div class="space-y-6">
+      <h2 class="display text-5xl md:text-6xl text-brand-primary">
+        Build your
+        <br />
+        <span class="text-brand-accent-strong">future in 3 steps</span>
+      </h2>
+
+      <ul class="space-y-4">
+        {steps.map((s) => (
+          <li class="flex items-start gap-4 p-4 rounded-2xl bg-neutral-0">
+            <span class="display text-3xl text-brand-accent-strong shrink-0">
+              {s.n}
+            </span>
+            <div>
+              <h3 class="font-semibold text-brand-primary">{s.title}</h3>
+              <p class="text-sm text-neutral-600">{s.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="space-y-5">
+      <div class="aspect-[5/4] rounded-3xl overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80"
+          alt="Student in training"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="rounded-2xl bg-neutral-0 p-6 space-y-3">
+        <h3 class="font-semibold text-brand-primary">
+          Help getting into the industry
+        </h3>
+        <p class="text-sm text-neutral-600">
+          As you near the end of your course, our Career Support team will link
+          you with employers across our recruitment partner network. You'll get
+          guidance and support to start building your career.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

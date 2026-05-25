@@ -1,0 +1,64 @@
+---
+const cards = [
+  {
+    quote:
+      "I was working with thick fingers, finishing his trade. I switched to a plumber. Now I'm happy.",
+    name: "James Carter",
+    role: "Plumber",
+    img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    quote:
+      "After being made redundant I retrained as a gas engineer — best decision I ever made.",
+    name: "Mike O'Connor",
+    role: "Gas engineer",
+    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    quote:
+      "The instructors actually care. I went from zero to City & Guilds qualified in 12 months.",
+    name: "Aisha Khan",
+    role: "Electrician",
+    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    quote:
+      "I never thought I'd be running my own business. Now I do — and I love every day.",
+    name: "Daniel Ross",
+    role: "Plumber",
+    img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=400&q=80",
+  },
+];
+---
+
+<section class="bg-brand-primary text-neutral-0 section-pad">
+  <div class="container-page space-y-12">
+    <h2 class="display text-center text-5xl md:text-6xl">
+      Feeling <span class="text-brand-warning">stuck?</span>
+    </h2>
+
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      {cards.map((c) => (
+        <article class="rounded-2xl overflow-hidden bg-brand-primary-700 flex flex-col">
+          <div class="aspect-square overflow-hidden">
+            <img src={c.img} alt={c.name} class="w-full h-full object-cover" />
+          </div>
+          <div class="p-5 space-y-3 flex-1">
+            <span class="text-brand-accent text-2xl leading-none">"</span>
+            <p class="text-sm text-neutral-200">{c.quote}</p>
+            <div class="pt-2 text-xs text-neutral-400">
+              <div class="font-medium text-neutral-0">{c.name}</div>
+              <div>{c.role}</div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p class="text-center max-w-3xl mx-auto text-neutral-200">
+      We've helped people from all sorts of backgrounds get qualified and into a
+      trade they love. Our future students can get in touch, you just need the
+      support — we'll do the rest.
+    </p>
+  </div>
+</section>

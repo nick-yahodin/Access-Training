@@ -1,0 +1,13 @@
+---
+interface Props {
+  variant?: "dark" | "light";
+}
+const { variant = "dark" }: Props = Astro.props;
+const text = variant === "dark" ? "text-brand-primary" : "text-neutral-0";
+const dot = variant === "dark" ? "text-brand-accent" : "text-brand-accent";
+---
+
+<a href="/" class="flex items-center gap-2" aria-label="Access Training home">
+  <span class={`display text-2xl ${text}`}>access</span>
+  <span class={`display text-2xl ${dot}`}>training</span>
+</a>

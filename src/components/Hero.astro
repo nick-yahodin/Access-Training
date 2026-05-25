@@ -1,0 +1,57 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="bg-brand-primary text-neutral-0 overflow-hidden">
+  <div class="container-page py-14 md:py-20 grid gap-10 md:grid-cols-[1.1fr_1fr] items-center">
+    <div>
+      <h1 class="display text-[clamp(3.5rem,8vw,7rem)] leading-[0.95]">
+        Find
+        <br />
+        your
+        <span class="text-brand-warning">happy</span>
+      </h1>
+    </div>
+
+    <div class="space-y-6">
+      <div class="aspect-[5/4] rounded-2xl overflow-hidden bg-brand-primary-500">
+        <img
+          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80"
+          alt="Tradesperson smiling"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-widest text-brand-accent">
+          Learn your trade
+        </p>
+        <p class="display text-3xl md:text-4xl">
+          Get qualified. Make it happen.
+        </p>
+        <p class="text-neutral-200 max-w-md">
+          We are the UK's most-trusted independent training provider for
+          plumbing, gas and electrical. Join over 100,000 students who started
+          their new career with us.
+        </p>
+        <Button href="/enquire" variant="accent" size="lg">Learn more</Button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-brand-primary-700">
+    <div
+      class="container-page py-6 flex flex-wrap items-center justify-between gap-6 text-sm text-neutral-200"
+    >
+      <span class="flex items-center gap-2">
+        <span class="text-brand-accent">★★★★★</span> Trustpilot · 4.8 · 6,200+
+        reviews
+      </span>
+      <span>City &amp; Guilds Approved</span>
+      <span>BPEC Approved Centre</span>
+      <span>LCL Awards Approved</span>
+      <a href="/enquire" class="text-brand-accent hover:underline"
+        >Enquire now →</a
+      >
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+---
+import Logo from "./Logo.astro";
+
+const cols = [
+  {
+    title: "About us",
+    links: [
+      { label: "Why Access Training", href: "/why" },
+      { label: "Blog", href: "/blog" },
+      { label: "Locations", href: "/locations" },
+    ],
+  },
+  {
+    title: "Course partnerships",
+    links: [
+      { label: "BPEC Approved Centre", href: "#" },
+      { label: "City & Guilds Approved", href: "#" },
+      { label: "LCL Awards Approved", href: "#" },
+    ],
+  },
+  {
+    title: "Contact",
+    links: [
+      { label: "0800 345 7474", href: "tel:08003457474" },
+      { label: "info@accesstraining.com", href: "mailto:info@accesstraining.com" },
+    ],
+  },
+];
+---
+
+<footer class="bg-brand-primary text-neutral-0 mt-24">
+  <div class="container-page py-14 grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+    <div class="space-y-4">
+      <Logo variant="light" />
+      <p class="text-sm text-neutral-200 max-w-xs">
+        Building a brighter future, one trade at a time.
+      </p>
+    </div>
+    {cols.map((col) => (
+      <div>
+        <h4 class="text-sm font-semibold mb-4">{col.title}</h4>
+        <ul class="space-y-3 text-sm text-neutral-200">
+          {col.links.map((l) => (
+            <li>
+              <a href={l.href} class="hover:text-brand-accent transition-colors">
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <div class="border-t border-brand-primary-500">
+    <div class="container-page py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-neutral-200">
+      <span>© {new Date().getFullYear()} Access Training. All rights reserved.</span>
+      <div class="flex gap-5">
+        <a href="/privacy" class="hover:text-brand-accent">Privacy</a>
+        <a href="/terms" class="hover:text-brand-accent">Terms</a>
+        <a href="/cookies" class="hover:text-brand-accent">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>

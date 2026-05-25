@@ -1,0 +1,71 @@
+---
+const trades = [
+  {
+    title: "Plumbing",
+    desc: "The UK's #1 plumbing training provider. Get qualified and earn from week one.",
+    img: "https://images.unsplash.com/photo-1521207418485-99c705420785?auto=format&fit=crop&w=600&q=80",
+    href: "/courses/plumbing",
+  },
+  {
+    title: "Gas Engineer",
+    desc: "Become a Gas Safe registered engineer. Average salary £38k–£60k.",
+    img: "https://images.unsplash.com/photo-1581092916357-f189d4f24fae?auto=format&fit=crop&w=600&q=80",
+    href: "/courses/gas",
+  },
+  {
+    title: "Electrician",
+    desc: "City & Guilds 18th Edition. Flexible training, real job outcomes.",
+    img: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=600&q=80",
+    href: "/courses/electrician",
+  },
+  {
+    title: "Unsure where to start?",
+    desc: "Talk to our careers team — we'll help you choose the right course.",
+    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+    href: "/contact",
+  },
+];
+---
+
+<section class="bg-brand-primary text-neutral-0 pb-16">
+  <div class="container-page space-y-10">
+    <h2 class="display text-center text-5xl md:text-6xl">
+      Our trades
+      <br />
+      <span class="text-brand-warning">and courses</span>
+    </h2>
+
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      {trades.map((t) => (
+        <article class="rounded-2xl overflow-hidden bg-brand-primary-700 group">
+          <div class="aspect-[5/4] overflow-hidden">
+            <img
+              src={t.img}
+              alt={t.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-5 space-y-3">
+            <h3 class="text-lg font-semibold">{t.title}</h3>
+            <p class="text-sm text-neutral-200">{t.desc}</p>
+            <a
+              href={t.href}
+              class="inline-flex items-center gap-1 text-sm text-brand-accent hover:underline"
+            >
+              View Course <span aria-hidden>→</span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="flex justify-center">
+      <a
+        href="/courses"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-neutral-200 text-sm hover:border-brand-accent hover:text-brand-accent transition-colors"
+      >
+        View All Available Courses
+      </a>
+    </div>
+  </div>
+</section>

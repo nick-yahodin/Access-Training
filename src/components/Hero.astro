@@ -1,57 +1,119 @@
 ---
-import Button from "./Button.astro";
+/*
+ * Hero section — rebuilt 1:1 from Figma node 1349:240.
+ * Background pure black, three-column composition on desktop:
+ * left = "Find your happy" SVG art, center = portrait, right = CTA card.
+ * Quote + trust band stack underneath on desktop, collapse on mobile.
+ */
 ---
 
-<section class="bg-brand-primary text-neutral-0 overflow-hidden">
-  <div class="container-page py-14 md:py-20 grid gap-10 md:grid-cols-[1.1fr_1fr] items-center">
-    <div>
-      <h1 class="display text-[clamp(3.5rem,8vw,7rem)] leading-[0.95]">
-        Find
-        <br />
-        your
-        <span class="text-brand-warning">happy</span>
-      </h1>
+<section class="bg-black text-white relative overflow-hidden">
+  <!-- Top transparent navigation -->
+  <div class="container-page pt-6">
+    <nav
+      class="flex items-center justify-between gap-4"
+      aria-label="Primary"
+    >
+      <a href="/" aria-label="Access Training home" class="shrink-0">
+        <img src="/svg/logo.svg" alt="Access Training" class="h-12 lg:h-14 w-auto" />
+      </a>
+      <ul class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-neutral-100">
+        <li><a href="/courses" class="hover:text-brand-accent flex items-center gap-1">Courses <span class="text-xs opacity-60">▾</span></a></li>
+        <li><a href="/earn" class="hover:text-brand-accent flex items-center gap-1">Earn while you learn <span class="text-xs opacity-60">▾</span></a></li>
+        <li><a href="/support" class="hover:text-brand-accent flex items-center gap-1">Student support <span class="text-xs opacity-60">▾</span></a></li>
+        <li><a href="/jobs" class="hover:text-brand-accent">Jobs</a></li>
+        <li><a href="/locations" class="hover:text-brand-accent">Locations</a></li>
+      </ul>
+      <div class="flex items-center gap-3 text-[15px] font-medium">
+        <a href="tel:08005467311" class="hidden md:inline text-[#ee7d5c]">0800 546 7311</a>
+        <a
+          href="/enquire"
+          class="px-5 py-3 rounded-full bg-[#edeff3] border border-[#b7b7b7] text-neutral-900 hover:bg-white transition-colors"
+        >Enquire Now</a>
+        <button
+          type="button"
+          aria-label="Search"
+          class="w-12 h-12 rounded-full bg-white text-neutral-900 grid place-items-center hover:bg-neutral-100 transition-colors"
+        >
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+        </button>
+        <a href="/login" class="hidden md:inline px-4 py-3 rounded-full bg-white text-neutral-900 hover:bg-neutral-100 transition-colors">Login</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Main composition -->
+  <div class="container-page pt-10 md:pt-14 pb-10 grid gap-8 md:grid-cols-[1fr_1.1fr_0.8fr] md:items-center">
+    <!-- "Find your happy" SVG art -->
+    <div class="md:order-1">
+      <img
+        src="/svg/find-your-happy.svg"
+        alt="Find your happy"
+        class="w-full max-w-[480px] mx-auto md:mx-0"
+        width="623"
+        height="346"
+      />
     </div>
 
-    <div class="space-y-6">
-      <div class="aspect-[5/4] rounded-2xl overflow-hidden bg-brand-primary-500">
-        <img
-          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80"
-          alt="Tradesperson smiling"
-          class="w-full h-full object-cover"
-        />
+    <!-- Hero portrait -->
+    <div class="md:order-2 -mx-4 md:mx-0">
+      <img
+        src="/images/hero-portrait.png"
+        alt="Smiling student"
+        class="w-full h-auto max-h-[640px] object-cover rounded-md"
+        width="708"
+        height="708"
+      />
+    </div>
+
+    <!-- "Get qualified" CTA card -->
+    <div class="md:order-3 space-y-5 max-w-[420px]">
+      <div class="space-y-2">
+        <h1 class="text-2xl md:text-[32px] leading-tight font-bold text-white">
+          Learn your trade.<br />
+          <span class="text-white">— Get qualified. Make it happen.</span>
+        </h1>
+        <p class="text-[17px] text-neutral-400 leading-relaxed">
+          We are the trade course specialists with thousands of successful
+          students. Learn your new trade online and at training centres across
+          the UK.
+        </p>
       </div>
-      <div class="space-y-3">
-        <p class="text-xs uppercase tracking-widest text-brand-accent">
-          Learn your trade
-        </p>
-        <p class="display text-3xl md:text-4xl">
-          Get qualified. Make it happen.
-        </p>
-        <p class="text-neutral-200 max-w-md">
-          We are the UK's most-trusted independent training provider for
-          plumbing, gas and electrical. Join over 100,000 students who started
-          their new career with us.
-        </p>
-        <Button href="/enquire" variant="accent" size="lg">Learn more</Button>
-      </div>
+      <a
+        href="/enquire"
+        class="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-[#2e9494] hover:bg-[#1a7171] border border-[#1a7171] text-white text-[17px] font-medium transition-colors"
+      >
+        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6l-6.3 6.3 1.4 1.4 6.3-6.3a4 4 0 0 0 5.6-5.6l-2.5 2.5-1.4-1.4 2.5-2.5z"/></svg>
+        Learn A Trade
+        <span aria-hidden class="text-base">↗</span>
+      </a>
     </div>
   </div>
 
-  <div class="bg-brand-primary-700">
-    <div
-      class="container-page py-6 flex flex-wrap items-center justify-between gap-6 text-sm text-neutral-200"
-    >
-      <span class="flex items-center gap-2">
-        <span class="text-brand-accent">★★★★★</span> Trustpilot · 4.8 · 6,200+
-        reviews
-      </span>
-      <span>City &amp; Guilds Approved</span>
-      <span>BPEC Approved Centre</span>
-      <span>LCL Awards Approved</span>
-      <a href="/enquire" class="text-brand-accent hover:underline"
-        >Enquire now →</a
-      >
+  <!-- Quote + pagination row -->
+  <div class="container-page pb-10">
+    <figure class="max-w-md md:ml-[42%] space-y-3">
+      <svg viewBox="0 0 32 28" class="w-8 h-7 text-[#ee7d5c] fill-current"><path d="M0 28h12V14H4c0-4 2-6 8-6V0c-9 0-12 6-12 14v14zm20 0h12V14h-8c0-4 2-6 8-6V0c-9 0-12 6-12 14v14z"/></svg>
+      <blockquote class="text-[22px] leading-snug text-neutral-100">
+        I'm a gas engineer, running my own business, and proud to be a dad.
+      </blockquote>
+      <figcaption class="text-base text-neutral-500">Sam Lowe</figcaption>
+      <div class="flex items-center gap-1.5 pt-2" role="tablist" aria-label="Testimonials">
+        <span class="block w-10 h-2 rounded-full bg-white"></span>
+        <span class="block w-2 h-2 rounded-full bg-white/60"></span>
+        <span class="block w-2 h-2 rounded-full bg-white/60"></span>
+      </div>
+    </figure>
+  </div>
+
+  <!-- Trust band -->
+  <div class="border-t border-white/10">
+    <div class="container-page py-6">
+      <img
+        src="/svg/trust-band.svg"
+        alt="Trusted by City & Guilds, Gas Safe, Trustpilot, EAL and others"
+        class="w-full h-auto opacity-90"
+      />
     </div>
   </div>
 </section>

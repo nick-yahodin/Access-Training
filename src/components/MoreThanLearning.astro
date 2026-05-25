@@ -2,49 +2,43 @@
 const cards = [
   {
     title: "Partners",
-    desc: "Priority access to roles from our network of UK trade hiring partners across plumbing, gas, and electrical.",
-    img: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80",
-    href: "/partners",
+    desc: "Priority access to our network of affiliates and commercial partners, giving you more opportunities and connections within the industry.",
+    chip: "+150 more",
+    visual: "partners",
   },
   {
     title: "Get career support",
-    desc: "Free CV reviews, interview prep, and recruiter intros — included with every Access Training course.",
-    img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80",
-    href: "/support",
+    desc: "Continuous professional development, including help with getting self-employed, CV writing and 3 years of guaranteed career support.",
+    chip: "✓✓✓",
+    visual: "support",
   },
   {
     title: "Exclusive jobs",
-    desc: "Exclusive job listings only available to Access Training graduates. Trades, on the move, every day.",
-    img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80",
-    href: "/jobs",
+    desc: "Exclusive job opportunities and career prospects to help you progress in your chosen trade and secure the right roles.",
+    chip: "🔍",
+    visual: "jobs",
   },
 ];
 ---
 
-<section class="bg-brand-cream pb-16">
+<section class="bg-[#ECEBE6] text-black pb-20">
   <div class="container-page space-y-10">
-    <h2 class="display text-5xl md:text-6xl text-brand-primary text-center">
-      More than
-      <br />
-      <span class="text-brand-accent-strong">just trade learning</span>
+    <h2 class="display text-4xl md:text-6xl text-center leading-[1.05]">
+      More than <br />
+      just trade learning
     </h2>
 
     <div class="grid gap-5 md:grid-cols-3">
       {cards.map((c) => (
-        <article class="bg-neutral-0 rounded-2xl overflow-hidden flex flex-col">
-          <div class="aspect-[5/3] overflow-hidden">
-            <img src={c.img} alt={c.title} class="w-full h-full object-cover" />
+        <article class="rounded-2xl bg-white p-6 space-y-4">
+          <div class="h-32 rounded-xl bg-neutral-100 grid place-items-center text-2xl text-neutral-500">
+            {c.chip}
           </div>
-          <div class="p-6 space-y-3 flex-1">
-            <h3 class="font-semibold text-brand-primary text-lg">{c.title}</h3>
-            <p class="text-sm text-neutral-600">{c.desc}</p>
-            <a
-              href={c.href}
-              class="inline-flex items-center gap-1 text-sm text-brand-accent-strong hover:underline pt-2"
-            >
-              Learn More <span aria-hidden>→</span>
-            </a>
-          </div>
+          <h3 class="text-xl font-bold">{c.title}</h3>
+          <p class="text-sm text-neutral-600">{c.desc}</p>
+          <a href="#" class="inline-flex items-center gap-2 text-sm font-medium pt-2 hover:text-[#2e9494]">
+            Learn More <span aria-hidden>↗</span>
+          </a>
         </article>
       ))}
     </div>

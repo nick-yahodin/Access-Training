@@ -3,10 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import FeelingStuck from "../components/FeelingStuck.astro";
 import TradesCourses from "../components/TradesCourses.astro";
-import CtaForm from "../components/CtaForm.astro";
+import JourneyCta from "../components/JourneyCta.astro";
 import BuildFuture from "../components/BuildFuture.astro";
-import StudentStories from "../components/StudentStories.astro";
-import WhyChoose from "../components/WhyChoose.astro";
 import Community from "../components/Community.astro";
 import MoreThanLearning from "../components/MoreThanLearning.astro";
 import LatestNews from "../components/LatestNews.astro";
@@ -16,13 +14,17 @@ import LatestNews from "../components/LatestNews.astro";
   <Hero />
   <FeelingStuck />
   <TradesCourses />
-  <CtaForm variant="dark" />
+  <div class="bg-black py-10">
+    <JourneyCta variant="yellow" background="dark" />
+  </div>
   <BuildFuture />
-  <StudentStories />
-  <CtaForm variant="light" />
-  <WhyChoose />
+  <div class="bg-[#ECEBE6] py-10">
+    <JourneyCta variant="blue" background="light" />
+  </div>
   <Community />
   <MoreThanLearning />
-  <CtaForm variant="light" />
+  <div class="bg-[#ECEBE6] py-10">
+    <JourneyCta variant="pink" background="light" />
+  </div>
   <LatestNews />
 </Layout>

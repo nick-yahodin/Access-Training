@@ -1,64 +1,80 @@
 ---
 const cards = [
   {
+    img: "/images/stuck-1.png",
     quote:
-      "I was working with thick fingers, finishing his trade. I switched to a plumber. Now I'm happy.",
-    name: "James Carter",
-    role: "Plumber",
-    img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=400&q=80",
+      "At 46, I was working late most nights, missing my family. I retrained as a plumber. Now I'm happy.",
+    name: "James Cleard, 46 years old",
   },
   {
+    img: "/images/stuck-2.png",
     quote:
-      "After being made redundant I retrained as a gas engineer — best decision I ever made.",
-    name: "Mike O'Connor",
-    role: "Gas engineer",
-    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80",
+      "After losing my job at 41, I retrained as an electrician and now run my own business.",
+    name: "Charlotte Taylor, 41 years old",
   },
   {
+    img: "/images/stuck-3.png",
     quote:
-      "The instructors actually care. I went from zero to City & Guilds qualified in 12 months.",
-    name: "Aisha Khan",
-    role: "Electrician",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    quote:
-      "I never thought I'd be running my own business. Now I do — and I love every day.",
-    name: "Daniel Ross",
-    role: "Plumber",
-    img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=400&q=80",
+      "At 38, I was stuck in low-paid work. Retrained as a gas engineer. Now in a stable skilled career.",
+    name: "Sem Doherman, 38 years old",
   },
 ];
 ---
 
-<section class="bg-brand-primary text-neutral-0 section-pad">
+<section class="bg-[#ECEBE6] text-black py-20">
   <div class="container-page space-y-12">
-    <h2 class="display text-center text-5xl md:text-6xl">
-      Feeling <span class="text-brand-warning">stuck?</span>
-    </h2>
+    <div class="text-center space-y-4 max-w-2xl mx-auto">
+      <h2 class="display text-5xl md:text-7xl lg:text-[96px] leading-[1.05]">
+        Feeling <span class="text-[#2e9494]">stuck?</span>
+      </h2>
+      <p class="text-lg text-neutral-700">
+        If you're struggling to find direction, want a career change or are
+        looking for better balance in your life. You're not alone.
+      </p>
+    </div>
 
-    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+    <div class="grid gap-5 md:grid-cols-3">
       {cards.map((c) => (
-        <article class="rounded-2xl overflow-hidden bg-brand-primary-700 flex flex-col">
-          <div class="aspect-square overflow-hidden">
-            <img src={c.img} alt={c.name} class="w-full h-full object-cover" />
+        <article class="rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="relative aspect-[5/4]">
+            <img
+              src={c.img}
+              alt=""
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <button
+              type="button"
+              aria-label="Play story"
+              class="absolute inset-0 m-auto w-14 h-14 rounded-full bg-white/95 grid place-items-center text-black"
+            >
+              <svg viewBox="0 0 24 24" class="w-5 h-5 ml-1" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
           </div>
-          <div class="p-5 space-y-3 flex-1">
-            <span class="text-brand-accent text-2xl leading-none">"</span>
-            <p class="text-sm text-neutral-200">{c.quote}</p>
-            <div class="pt-2 text-xs text-neutral-400">
-              <div class="font-medium text-neutral-0">{c.name}</div>
-              <div>{c.role}</div>
-            </div>
+          <div class="p-6 space-y-3">
+            <svg viewBox="0 0 32 28" class="w-7 h-6 text-[#2e9494] fill-current"><path d="M0 28h12V14H4c0-4 2-6 8-6V0c-9 0-12 6-12 14v14zm20 0h12V14h-8c0-4 2-6 8-6V0c-9 0-12 6-12 14v14z"/></svg>
+            <p class="text-sm leading-relaxed">{c.quote}</p>
+            <p class="text-xs text-neutral-500 pt-1">{c.name}</p>
           </div>
         </article>
       ))}
     </div>
 
-    <p class="text-center max-w-3xl mx-auto text-neutral-200">
-      We've helped people from all sorts of backgrounds get qualified and into a
-      trade they love. Our future students can get in touch, you just need the
-      support — we'll do the rest.
-    </p>
+    <div class="text-center space-y-6 max-w-2xl mx-auto pt-8">
+      <h3 class="display text-4xl md:text-5xl">
+        Need help <span class="text-[#2e9494]">getting unstuck?</span>
+      </h3>
+      <p class="text-lg text-neutral-700">
+        We've helped people from all sorts of backgrounds get qualified and into
+        a trade career. We truly believe anyone can get unstuck, you just need
+        the support to get there.
+      </p>
+      <a
+        href="/quiz"
+        class="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-[#2e9494] hover:bg-[#1a7171] text-white text-base font-medium transition-colors"
+      >
+        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M9 11h6v2H9zm0 4h6v2H9zm0-8h6v2H9zm-4-4v18h14V3H5zm12 16H7V5h10v14z"/></svg>
+        Take Our Mini-Quiz Here
+      </a>
+    </div>
   </div>
 </section>

@@ -1,6 +1,4 @@
 ---
-import Logo from "./Logo.astro";
-
 const cols = [
   {
     title: "About us",
@@ -11,38 +9,38 @@ const cols = [
     ],
   },
   {
-    title: "Course partnerships",
+    title: "Corporate partnerships",
     links: [
-      { label: "BPEC Approved Centre", href: "#" },
-      { label: "City & Guilds Approved", href: "#" },
-      { label: "LCL Awards Approved", href: "#" },
+      { label: "Be an AT franchise", href: "/franchise" },
+      { label: "Be an Access Network Partner", href: "/partners" },
+      { label: "Corporate Training", href: "/corporate" },
     ],
   },
   {
     title: "Contact",
     links: [
-      { label: "0800 345 7474", href: "tel:08003457474" },
+      { label: "0800 546 7311", href: "tel:08005467311" },
       { label: "info@accesstraining.com", href: "mailto:info@accesstraining.com" },
     ],
   },
 ];
 ---
 
-<footer class="bg-brand-primary text-neutral-0 mt-24">
-  <div class="container-page py-14 grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+<footer class="bg-black text-white pt-16 pb-8">
+  <div class="container-page grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
     <div class="space-y-4">
-      <Logo variant="light" />
-      <p class="text-sm text-neutral-200 max-w-xs">
+      <img src="/svg/logo.svg" alt="Access Training" class="h-12 w-auto" />
+      <p class="text-sm text-neutral-400 max-w-xs">
         Building a brighter future, one trade at a time.
       </p>
     </div>
     {cols.map((col) => (
       <div>
-        <h4 class="text-sm font-semibold mb-4">{col.title}</h4>
-        <ul class="space-y-3 text-sm text-neutral-200">
+        <h4 class="text-sm font-medium mb-4">{col.title}</h4>
+        <ul class="space-y-3 text-sm text-neutral-400">
           {col.links.map((l) => (
             <li>
-              <a href={l.href} class="hover:text-brand-accent transition-colors">
+              <a href={l.href} class="hover:text-[#2e9494] transition-colors">
                 {l.label}
               </a>
             </li>
@@ -51,14 +49,12 @@ const cols = [
       </div>
     ))}
   </div>
-  <div class="border-t border-brand-primary-500">
-    <div class="container-page py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-neutral-200">
-      <span>© {new Date().getFullYear()} Access Training. All rights reserved.</span>
-      <div class="flex gap-5">
-        <a href="/privacy" class="hover:text-brand-accent">Privacy</a>
-        <a href="/terms" class="hover:text-brand-accent">Terms</a>
-        <a href="/cookies" class="hover:text-brand-accent">Cookies</a>
-      </div>
+  <div class="container-page border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-neutral-500">
+    <span>© Copyright Access Training 2026. All rights reserved</span>
+    <div class="flex gap-5">
+      <a href="/privacy" class="hover:text-white">Privacy</a>
+      <a href="/terms" class="hover:text-white">Terms</a>
+      <a href="/cookies" class="hover:text-white">Cookies</a>
     </div>
   </div>
 </footer>

@@ -1,0 +1,79 @@
+---
+/*
+ * Reusable "Start your journey. Get in touch." CTA form.
+ * Three portrait variants per Figma: yellow / blue / pink.
+ */
+interface Props {
+  variant?: "yellow" | "blue" | "pink";
+  background?: "dark" | "light";
+}
+const { variant = "yellow", background = "dark" }: Props = Astro.props;
+
+const portrait = {
+  yellow: "/images/cta-yellow.png",
+  blue: "/images/cta-blue.png",
+  pink: "/images/cta-pink.png",
+}[variant];
+
+const isDark = background === "dark";
+const bg = isDark ? "bg-black text-white" : "bg-white text-black";
+const inputBg = isDark
+  ? "bg-white/5 border-white/15 text-white placeholder:text-neutral-400"
+  : "bg-neutral-100 border-neutral-200 text-black placeholder:text-neutral-500";
+---
+
+<section class={`${bg} relative overflow-hidden rounded-3xl mx-4 md:mx-8`}>
+  <div class="grid md:grid-cols-[280px_1fr] items-stretch">
+    <div class="relative h-48 md:h-auto bg-black overflow-hidden">
+      <img
+        src={portrait}
+        alt=""
+        aria-hidden="true"
+        class="w-full h-full object-cover object-center"
+      />
+    </div>
+    <div class="p-6 md:p-10 lg:p-14 flex flex-col justify-center gap-6">
+      <div class="space-y-1">
+        <h2 class="display text-3xl md:text-5xl lg:text-[56px] leading-[1.05]">
+          <span>Start your journey.</span><br />
+          <span class={variant === "yellow" ? "text-[#ffbe00]" : variant === "blue" ? "text-[#2e9494]" : "text-[#ee7d5c]"}>
+            Get in touch.
+          </span>
+        </h2>
+      </div>
+
+      <form class="space-y-4">
+        <div class="grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto]">
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Full name"
+            class={`px-5 py-4 rounded-full border ${inputBg} text-base outline-none focus:border-brand-accent transition-colors`}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email address"
+            class={`px-5 py-4 rounded-full border ${inputBg} text-base outline-none focus:border-brand-accent transition-colors`}
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone number"
+            class={`px-5 py-4 rounded-full border ${inputBg} text-base outline-none focus:border-brand-accent transition-colors`}
+          />
+          <button
+            type="submit"
+            class="px-6 py-4 rounded-full bg-[#2e9494] hover:bg-[#1a7171] text-white font-medium transition-colors"
+          >
+            Enquire Now
+          </button>
+        </div>
+        <label class={`flex items-start gap-2 text-sm ${isDark ? "text-neutral-400" : "text-neutral-600"}`}>
+          <input type="checkbox" class="mt-1" />
+          <span>I agree to receive updates, offers, and course information</span>
+        </label>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,69 +1,65 @@
 ---
 const posts = [
   {
-    title: "Training centres in Wales now locally, quality nationally",
+    title: "Training centres in Wales: train locally, qualify nationally",
     date: "April 12, 2026",
-    read: "3 min read",
-    img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&q=80",
-    href: "/blog/wales-centres",
+    read: "3 minute read",
+    img: "/images/news-wales.png",
+    href: "/blog/wales",
   },
   {
-    title: "Plumbing while you earn — feels the system really works",
-    date: "April 4, 2026",
-    read: "5 min read",
-    img: "https://images.unsplash.com/photo-1607400201515-c2c41c07d307?auto=format&fit=crop&w=600&q=80",
-    href: "/blog/earn-while-you-learn",
+    title: "Plumbing while you earn: how the system really works",
+    date: "April 12, 2026",
+    read: "4 minute read",
+    img: "/images/news-plumbing.png",
+    href: "/blog/earn-plumbing",
   },
   {
-    title: "Train in the UK Midlands: career training folks",
-    date: "March 30, 2026",
-    read: "4 min read",
-    img: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80",
+    title: "Train in the UK Midlands: central training hubs",
+    date: "April 12, 2026",
+    read: "2 minute read",
+    img: "/images/news-midlands.png",
     href: "/blog/midlands",
   },
   {
-    title: "Start your trade career in Scotland with real opportunity",
-    date: "March 22, 2026",
-    read: "4 min read",
-    img: "https://images.unsplash.com/photo-1581094799710-b3eb9b9a0eaf?auto=format&fit=crop&w=600&q=80",
+    title: "Start your trade career in Scotland with real opportunities",
+    date: "April 12, 2026",
+    read: "4 minute read",
+    img: "/images/news-scotland.png",
     href: "/blog/scotland",
   },
 ];
 ---
 
-<section class="bg-brand-primary text-neutral-0 section-pad">
-  <div class="container-page space-y-10">
-    <div class="text-center space-y-4">
-      <h2 class="display text-5xl md:text-6xl">
-        Latest <span class="text-brand-warning">news</span>
+<section class="bg-black text-white py-20">
+  <div class="container-page space-y-12">
+    <div class="text-center space-y-5">
+      <h2 class="display text-5xl md:text-7xl lg:text-[96px] leading-[1.05]">
+        Latest <span class="text-[#ffbe00]">news</span>
       </h2>
-      <p class="max-w-2xl mx-auto text-neutral-200">
-        Learn all about the training courses we provide and catch up on student
-        stories from across the trade world.
+      <p class="text-lg text-neutral-300 max-w-2xl mx-auto">
+        Learn all about the training courses we provide and catch up on recent
+        news stories from the trade world.
       </p>
-      <a
-        href="/blog"
-        class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-neutral-200 text-sm hover:border-brand-accent hover:text-brand-accent transition-colors"
-      >
-        View All
-      </a>
+      <div class="flex justify-center pt-2">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/30 hover:border-white hover:bg-white/5 transition-colors"
+        >
+          View All <span aria-hidden>↗</span>
+        </a>
+      </div>
     </div>
 
     <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
       {posts.map((p) => (
-        <article class="rounded-2xl overflow-hidden bg-brand-primary-700">
-          <div class="aspect-[5/3] overflow-hidden">
-            <img src={p.img} alt={p.title} class="w-full h-full object-cover" />
-          </div>
-          <div class="p-5 space-y-3">
-            <div class="text-xs text-neutral-400 flex items-center gap-3">
-              <span>{p.date}</span>
-              <span>·</span>
-              <span>{p.read}</span>
-            </div>
-            <a href={p.href} class="font-medium hover:text-brand-accent">
-              {p.title}
-            </a>
+        <article class="space-y-4">
+          <a href={p.href} class="block aspect-[5/4] rounded-2xl overflow-hidden">
+            <img src={p.img} alt={p.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </a>
+          <div class="space-y-2 px-1">
+            <a href={p.href} class="block text-lg leading-snug hover:text-[#ffbe00]">{p.title}</a>
+            <p class="text-xs text-neutral-400">{p.date} | {p.read}</p>
           </div>
         </article>
       ))}
